@@ -1,0 +1,219 @@
+﻿@model IEnumerable<FirstPractice2.Models.Product>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+@{
+    ViewBag.Title = "每個產品的資訊";
+}
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css" />
+<script src="~/Scripts/knockout-3.5.1.js"></script>
+<script src="~/Scripts/knockout-3.5.1.debug.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+    <form method="post" action="~/Product/Filter2" class="form-horizontal">
+        <table class="table table-bordered table-hover" border="1">
+            <thead>
+                <tr class="dh">
+                    <th>ProductID</th>
+                    <th>ProductName</th>
+                    <th>SupplierID</th>
+                    <th>CategoryID</th>
+                    <th>QuantityPerUnit</th>
+                    <th>UnitPrice</th>
+                    <th>UnitsInStock</th>
+                    <th>UnitsOnOrder</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: results" class="tbd">
+                <tr class="dl">
+                    <td data-bind="text: ProductID"> </td>
+                    <td data-bind="text: ProductName"> </td>
+                    <td data-bind="text: SupplierID"> </td>
+                    <td data-bind="text: CategoryID"> </td>
+                    <td data-bind="text: QuantityPerUnit"> </td>
+                    <td data-bind="text: UnitPrice"> </td>
+                    <td data-bind="text: UnitsInStock" class="dlr"> </td>
+                    <td data-bind="text: UnitsOnOrder" class="dlr"> </td>
+                    @*@foreach (var _product in Model)
+                    {*@
+                    <td>
+
+                        <button data-bind="click: $root.edit">想要修改的產品</button>
+                        @*<a href="~/Product/Delete/@_product.ProductID" class="btn btn-danger">刪除</a>*@
+                        @*<a href='~/Product/Delete/@_product.ProductID' data-bind='click: $root.removeContact'>Delete</a>*@
+                        @*<input data-bind="click: $parent.deleteStudent.bind($parent, $data.ProductID)" type="button" value="Sterge" class="button button1" />*@
+                    </td>
+
+                    @*}*@
+                </tr>
+            </tbody>
+
+        </table>
+      
+        <div class="form-group">
+            <label for="ProductName" class="col-sm-2 control-label">產品名稱</label>
+            <div class="col-sm-10">
+                <input type="hidden" class="form-control" name="ProductID" data-bind="value:results().ProductID" />
+                <input type="text" class="form-control" name="ProductName" data-bind="value:results(). ProductName" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="CategoryID" class="col-sm-2 control-label">選擇種類</label>
+            <div class="col-sm-10">
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="CategoryID" data-bind="value: results().CategoryID" />
+                </div>
+                @*<select id="CategoryID" name="CategoryID" class="form-control">
+                    @foreach (var _product in Model)
+                    {
+                        if (_product.CategoryID != 0)
+                        {
+                            <option selected="selected" value="@_product.CategoryID">@_product.CategoryID @_product.CategoryName</option>
+                        }
+
+                    }
+                </select>*@
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="SupplierID" class="col-sm-2 control-label">選擇供應商</label>
+            <div class="col-sm-10">
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="SupplierID" data-bind="value:results(). SupplierID" />
+                </div>
+                @*<select id="SupplierID" name="SupplierID" class="form-control">
+                    @foreach (var _product in Model)
+                    {
+                        if (_product.SupplierID != 0)
+                        {
+                            <option selected="selected" value="@_product.SupplierID">@_product.SupplierID @_product.CompanyName</option>
+                        }
+
+                    }
+                </select>*@
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="QuantityPerUnit" class="col-sm-2 control-label">QuantityPerUnit</label>
+            <div class="col-sm-10">
+                <input class="form-control" name="QuantityPerUnit" data-bind="value: results().QuantityPerUnit" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="UnitPrice" class="col-sm-2 control-label">價錢</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="UnitPrice" data-bind="value: results().UnitPrice" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="UnitsInStock" class="col-sm-2 control-label">庫存量</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="UnitsInStock" data-bind="value: results().UnitsInStock" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="UnitsOnOrder" class="col-sm-2 control-label">UnitsOnOrder</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="UnitsOnOrder" data-bind="value:results(). UnitsOnOrder" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button id="Login" data-bind="submit: save">修改</button>
+                <a href="~/Product/Filter2" class="btn btn-primary">返回上一頁</a>
+            </div>
+        </div>
+
+    </form>
+</body>
+
+</html>
+<script>
+    function MyViewModel() {
+        var self = this;
+        self.results = ko.observableArray();
+        Filter: ko.observable(""),
+        ko.computed(function () {
+            $.getJSON('@Url.Action("Index6", "Product")', null,
+                self.results);
+
+        });
+        //self.RemoveUser = function () {
+        //    self.results.remove(this);
+        //}
+        self.removeContact = function () {
+            self.results.remove(this);
+        };
+        self.edit = function () {
+            self.results(this);
+
+        }
+        //$.ajax({
+        //    type: 'DELETE',
+        //    url: uri + '/' + id,
+        //    success: function (result) {
+        //        alert('Student sters cu succes! ');
+        //    },
+        //    error: function (error) {
+        //        alert('Stergere esuata! ');
+        //    }
+        //});
+
+        //$('#delete').click(function () {
+        //    var login_data = {
+        //        "ProductID": $("#ProductID").val(),
+        //    }
+        //    $.ajax({
+        //        type: "POST",
+        //        url: "Delete",
+        //        data: login_data,
+        //        dataType: "json",
+
+        //    })
+        //});
+        $('#Login').click(function () {
+            var login_data = {
+                "ProductID": $("#ProductID").val(),
+                 "ProductName": $("#ProductName").val(),
+                 "SupplierID": $("#SupplierID").val(),
+                 "CategoryID": $("#CategoryID").val(),
+                 "QuantityPerUnit": $("#QuantityPerUnit").val(),
+                 "UnitPrice": $("#UnitPrice").val(),
+                 "UnitsInStock": $("#UnitsInStock").val(),
+                 "UnitsOnOrder": $("#UnitsOnOrder").val(),
+             }
+             $.ajax({
+                 type: "POST",
+                 url: "Filter2",
+                 data: login_data,
+                 dataType: "json",
+
+                 })
+             });
+        //self.addContact = function () {
+        //    self.results.push({
+        //        ProductID: "",
+        //        ProductName: "",
+        //        SupplierID: "",
+        //        CategoryID: "",
+        //        QuantityPerUnit: "",
+        //        UnitPrice: "",
+        //        UnitsInStock: "",
+        //        UnitsOnOrder: ""
+
+        //    });
+        //};
+
+        self.save = function () {
+            self.lastSavedJson(JSON.stringify(ko.toJS(self.results), null, 20));
+        };
+        self.lastSavedJson = ko.observable("")
+
+    }
+    $(function () {
+        ko.applyBindings(new MyViewModel());
+    });
+
+
+</script>

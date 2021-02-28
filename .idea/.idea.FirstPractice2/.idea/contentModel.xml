@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\User\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\User\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_FirstPractice2.-1126365288.00" t="ExcludeRecursive" />
+    <e p="C:\Users\User\Desktop\FirstPractice2" t="IncludeFlat">
+      <e p="FirstPractice2" t="IncludeRecursive">
+        <e p="App_Data" t="Include" />
+        <e p="App_Start" t="Include">
+          <e p="RouteConfig.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Content" t="Include">
+          <e p="bootstrap-theme.css" t="Include" />
+          <e p="bootstrap-theme.css.map" t="Include" />
+          <e p="bootstrap-theme.min.css" t="Include" />
+          <e p="bootstrap-theme.min.css.map" t="Include" />
+          <e p="bootstrap.css" t="Include" />
+          <e p="bootstrap.css.map" t="Include" />
+          <e p="bootstrap.min.css" t="Include" />
+          <e p="bootstrap.min.css.map" t="Include" />
+          <e p="Site.css" t="Include" />
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="CategoryController.cs" t="Include" />
+          <e p="ProductController.cs" t="Include" />
+        </e>
+        <e p="FirstPractice2.csproj" t="IncludeRecursive" />
+        <e p="fonts" t="Include">
+          <e p="glyphicons-halflings-regular.eot" t="Include" />
+          <e p="glyphicons-halflings-regular.svg" t="Include" />
+          <e p="glyphicons-halflings-regular.ttf" t="Include" />
+          <e p="glyphicons-halflings-regular.woff" t="Include" />
+          <e p="glyphicons-halflings-regular.woff2" t="Include" />
+        </e>
+        <e p="Global.asax" t="Include" />
+        <e p="Global.asax.cs" t="Include" />
+        <e p="Models" t="Include">
+          <e p="Category.cs" t="Include" />
+          <e p="CategoryDataContext.cs" t="Include" />
+          <e p="Product.cs" t="Include" />
+          <e p="ProductDataContext.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="bootstrap.js" t="Include" />
+          <e p="bootstrap.min.js" t="Include" />
+          <e p="jquery-3.4.1.intellisense.js" t="Include" />
+          <e p="jquery-3.4.1.js" t="Include" />
+          <e p="jquery-3.4.1.min.js" t="Include" />
+          <e p="jquery-3.4.1.min.map" t="Include" />
+          <e p="jquery-3.4.1.slim.js" t="Include" />
+          <e p="jquery-3.4.1.slim.min.js" t="Include" />
+          <e p="jquery-3.4.1.slim.min.map" t="Include" />
+          <e p="knockout-3.5.1.debug.js" t="Include" />
+          <e p="knockout-3.5.1.js" t="Include" />
+          <e p="modernizr-2.8.3.js" t="Include" />
+        </e>
+        <e p="Views" t="Include">
+          <e p="_ViewStart.cshtml" t="Include" />
+          <e p="Category" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Product" t="Include">
+            <e p="Edit1.cshtml" t="Include" />
+            <e p="Filter.cshtml" t="Include" />
+            <e p="Filter1.cshtml" t="Include" />
+            <e p="Filter2.cshtml" t="Include" />
+            <e p="Filter3.cshtml" t="Include" />
+            <e p="Index5.cshtml" t="Include" />
+          </e>
+          <e p="Shared" t="Include">
+            <e p="_Layout.cshtml" t="Include" />
+          </e>
+          <e p="web.config" t="Include" />
+        </e>
+        <e p="web.config" t="Include" />
+        <e p="Web.Debug.config" t="Include" />
+        <e p="Web.Release.config" t="Include" />
+      </e>
+      <e p="FirstPractice2.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
