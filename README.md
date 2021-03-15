@@ -13,3 +13,5 @@
 ![image](https://github.com/austria5533/Shopping-cart-2/blob/main/shopping-cart-02/4.JPG)
 
 ![image](https://github.com/austria5533/Shopping-cart-2/blob/main/shopping-cart-02/5.JPG)
+
+![image](https://github.com/austria5533/Shopping-cart-2/blob/main/shopping-cart-02/6.JPG)
